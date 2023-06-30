@@ -13,16 +13,16 @@ import numpy as np
 import random
 
 class Dice:
-    def __init__(self, sides, current_value):
-        self.sides = 6
-        self.current_value = 0
+    def __init__(self,):
+      self.sides = 6
 
     def roll(self):
-        self.current_value = random.randint(1, 6)
-        print(self.current_value)
+       return random.randint(1, self.sides)
 
-di = Dice(6,0)
-di.roll(1)
+my_dice = Dice()
+result = my_dice.roll()
+print(result)
+  
     
 
 
