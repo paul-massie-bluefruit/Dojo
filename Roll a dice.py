@@ -3,4 +3,4 @@ msg = "Roll a dice"
 print(msg)
 
 
-print(np.random.randint(1,6))
+print(np.random.randint(1, 6))
