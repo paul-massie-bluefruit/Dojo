@@ -22,21 +22,40 @@ class Dice:
         while di_rolled > 0:
             result.append(random.randint(1, self.sides))
             di_rolled -= 1
-            
-        return result
+        return sorted(result)
 
-keep_di = []
-throw_di = []
+
+keepers = []
+throwers = []
+
 my_dice = Dice()
 roll = my_dice.roll()
-print(roll)
+
+print("Dice Rolled this throw ", roll)
+
+throwers.clear()
+
 for di in roll:
     print("keep this di", di)
     x = input("Enter Y to keep or N to throw again? ")
     if x != ('y' or 'Y'):
-        throw_di.append(di)
+        throwers.append(di)
     else:
-        keep_di.append(di)
+        keepers.append(di)
 
-print(keep_di)
-print(throw_di)
+print("Dice kept ", keepers)
+print("dice to be thrown ", throwers)
+
+roll = my_dice.roll(int(len(throwers)))
+print("Dice Rolled this throw ", roll)
+throwers.clear()
+for di in roll:
+    print("keep this di", di)
+    x = input("Enter Y to keep or N to throw again? ")
+    if x != ('y' or 'Y'):
+        throwers.append(di)
+    else:
+        keepers.append(di)
+
+print("Dice kept ", keepers)
+print("dice to be thrown ", throwers)
