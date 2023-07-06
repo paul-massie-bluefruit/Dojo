@@ -8,7 +8,7 @@ throw_dice() # final throw, end of turn
 
 """
 import random
-
+from Classes_Yatzee import *
 
 class Dice:
     def __init__(self, sides=6):
@@ -26,9 +26,9 @@ class Dice:
 class Player:
     def __init__(self, name="Player 1"):
         self.name = name
-        self.roll = []
-        self.keepers = []
-        self.throwers = []
+        self.roll = sorted([])
+        self.keepers = sorted([])
+        self.throwers = sorted([])
 
 #class initallised
 my_dice = Dice()
@@ -53,9 +53,14 @@ def turn_throw(n):
     else:
         n = len(p1.throwers)
     p1.roll = sorted(my_dice.roll(n))
+
+def total_dice_value(lst):
+    score = 0
+    for i in lst:
+        score += i
+    print(score)
     
-
-
+    
 roll_total = 0
 while roll_total < 3 and len(p1.keepers)  !=5:   
     turn_throw(int(len(p1.throwers)))
@@ -64,6 +69,7 @@ while roll_total < 3 and len(p1.keepers)  !=5:
     print("Dice to keep: ", p1.keepers)
 
 print("Score", p1.keepers + p1.throwers)
+total_dice_value(p1.keepers + p1.throwers)
 
 
 
