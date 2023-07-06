@@ -1,12 +1,10 @@
 """
 PSEDO CODE
-throw_dice() # initial trow
+throw_dice() # initial trow 
 decide() # decide which dice to keep - end turn ?
 throw_dice() #2nd throw
 decide() # decide which dice to keep - end turn ?
-throw_dice() # final through, end of turn
-
-Score()# calculate score
+throw_dice() # final throw, end of turn
 
 """
 import random
@@ -37,15 +35,6 @@ my_dice = Dice()
 p1 = Player()
     
 
-def turn_throw(n):
-    if n == 0:
-        n += 5
-    else:
-        n = len(p1.throwers)
-    p1.roll = sorted(my_dice.roll(n))
-    
-
-
 def decide():
     print("Thrown dice result: ", p1.roll)
     p1.throwers.clear()
@@ -56,16 +45,36 @@ def decide():
             p1.throwers.append(di)
         else:
             p1.keepers.append(di)
-        
 
+
+def turn_throw(n):
+    if n == 0:
+        n += 5
+    else:
+        n = len(p1.throwers)
+    p1.roll = sorted(my_dice.roll(n))
     
-    
+
+
 roll_total = 0
-while roll_total < 3 and len(p1.keepers)  !=5:
-   
+while roll_total < 3 and len(p1.keepers)  !=5:   
     turn_throw(int(len(p1.throwers)))
     decide()
     roll_total +=1
     print("Dice to keep: ", p1.keepers)
 
 print("Score", p1.keepers + p1.throwers)
+
+
+
+"""
+ where are we - a player can roll the dice and decide which to keep, and re-roll upto 3 times.
+
+ What's next?   - create class for score card
+                - abiity to add dice total to score card
+                - create logic for scoring rules - see Yatzee_rules.pdf
+PSEDO CODE
+
+Score()# calculate score
+scorecard.
+"""
