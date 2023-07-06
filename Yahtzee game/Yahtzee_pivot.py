@@ -8,7 +8,14 @@ throw_dice() # final throw, end of turn
 
 """
 import random
-from Classes_Yatzee import *
+class Scoring:
+    def __init__(self) -> None:
+        self.Aces = 0
+        self.Twos = 0
+        self.Threes = 0
+        self.Fours = 0
+        self.Fives = 0
+        self.Sixes = 0
 
 class Dice:
     def __init__(self, sides=6):

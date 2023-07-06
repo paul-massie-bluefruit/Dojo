@@ -1,3 +1,8 @@
+"""
+LEARNING OBJECTIVE
+
+    - find a way to have all the classes within this file and import them where needed?
+"""
 import random
 
 
@@ -20,7 +25,3 @@ class Player:
         self.roll = sorted([])
         self.keepers = sorted([])
         self.throwers = sorted([])
-
-#class initallised
-my_dice = Dice()
-p1 = Player()
