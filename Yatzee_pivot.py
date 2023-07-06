@@ -37,12 +37,18 @@ my_dice = Dice()
 p1 = Player()
     
 
-def turn_begin(n=5):
+def turn_throw(n):
+    if n == 0:
+        n += 5
+    else:
+        n = len(p1.throwers)
     p1.roll = sorted(my_dice.roll(n))
-    print(p1.roll)
+    
 
 
 def decide():
+    print("Thrown dice result: ", p1.roll)
+    p1.throwers.clear()
     for di in p1.roll:
         print( "keep this di:", di)
         x = input("Enter Y to keep or N to throw again? ")
@@ -50,7 +56,16 @@ def decide():
             p1.throwers.append(di)
         else:
             p1.keepers.append(di)
+        
 
+    
+    
+roll_total = 0
+while roll_total < 3 and len(p1.keepers)  !=5:
+   
+    turn_throw(int(len(p1.throwers)))
+    decide()
+    roll_total +=1
+    print("Dice to keep: ", p1.keepers)
 
-turn_begin()
-decide()
+print("Score", p1.keepers + p1.throwers)

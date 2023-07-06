@@ -26,5 +26,6 @@ class ElectricGuitar(Guitar):
 
 my_guitar = ElectricGuitar()
 my_guitar._ElectricGuitar__secret()
+my_guitar.playLoader()
 print("my base has ", BassGuitar(4).n_strings, "Strings")
 print("my electric has ", ElectricGuitar().n_strings, "Strings")
