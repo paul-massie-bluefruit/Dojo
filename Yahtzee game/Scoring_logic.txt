@@ -1,0 +1,18 @@
+just a txt file to capture thought on how to poptentailly do scoring
+
+#count aces to sixes
+
+list.count(1)
+list.count(2)
+list.count(3)
+list.count(4)
+list.count(5)
+list.count(6)
+
+#threeOAK
+if list.count() == 3
+	total_dice_values()
+
+#FourOAK
+if list.count() == 4
+	total_dice_values()

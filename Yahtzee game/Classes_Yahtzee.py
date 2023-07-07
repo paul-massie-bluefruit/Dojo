@@ -1,7 +1,8 @@
 """
 LEARNING OBJECTIVE
 
-    - find a way to have all the classes within this file and import them where needed?
+    -   find a way to have all the classes within this file
+            and import them where needed?
 """
 import random
 
