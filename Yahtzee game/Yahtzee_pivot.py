@@ -84,11 +84,10 @@ def total_dice_value(lst):
 
 def Di_Duplicates(lst):
     x = 1
-    while x <= 6 :
+    while x <= 6:
+        print(x, "di's =", lst.count(x))
         
-        print(x,"di's =" ,lst.count(x))
-        x +=1
-
+        x += 1
 
 
 roll_total = 0
