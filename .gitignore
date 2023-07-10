@@ -1,0 +1,17 @@
+# Python
+.venv
+__pycache__
+AutomatedTesting.egg-info
+
+# Sphinx
+Sphinx/_build
+Sphinx/Feature Files/
+
+# BDD / Behave
+reports
+Sphinx/BehaveToRst/BehaveOutput/
+TEMP.bat
+
+#PyTest
+*.pytest_cache
+BDD_unit_test_results.xml
