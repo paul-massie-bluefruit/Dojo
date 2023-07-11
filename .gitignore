@@ -15,3 +15,5 @@ TEMP.bat
 #PyTest
 *.pytest_cache
 BDD_unit_test_results.xml
+
+\.vs
